@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
 
+const NEWS_API = import.meta.env.VITE_NEWS_API;
+
 const LeftSideBar = () => {
   const [news, setNews] = useState<any[]>([]);
 
@@ -9,7 +11,7 @@ const LeftSideBar = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?category=technology&pageSize=10&apiKey=e05f9c798c5945c6b4c6bfb83b0d9f6a`
+          `https://newsapi.org/v2/top-headlines?category=technology&pageSize=10&apiKey=${NEWS_API}`
         );
         setNews(response.data.articles);
       } catch (error) {
