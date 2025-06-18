@@ -5,6 +5,7 @@ import type { RootState } from "../app/store";
 import type { Post } from "../features/post/postSlice";
 import SkeletonPostCard from "../components/SkeletonPostCard";
 import PostCard from "../components/PostCard";
+import { Helmet } from "react-helmet-async";
 
 const FETCH_COUNT = 4; // Consistent fetch count
 
@@ -49,30 +50,37 @@ const Feed = () => {
   }
 
   return (
-    <div className="w-full mx-4 p-4 bg-white dark:bg-gray-800 text-black dark:text-white rounded-xl shadow scrollbar-hide">
-      <InfiniteScroll
-        dataLength={ visiblePosts.length }
-        next={ fetchMoreData }
-        hasMore={ visiblePosts.length < allPosts.length }
-        loader={
-          isFetchingMore && (
-            <div className="w-full mx-auto p-4 mt-1">
-              <SkeletonPostCard />
-              <SkeletonPostCard />
-            </div>
-          )
-        }
-        endMessage={
-          <p className="text-center mt-4 text-gray-500 dark:text-gray-400">
-            Yay! You have seen it all 😊
-          </p>
-        }
-      >
-        { visiblePosts.map((post) => (
-          <PostCard key={ post.id } post={ post } />
-        )) }
-      </InfiniteScroll>
-    </div>
+    <>
+      <Helmet>
+        <title>DevConnect | Feed</title>
+        <meta name="description" content="See what everyone is talking about on DevConnect. Latest posts from your network." />
+      </Helmet>
+
+      <div className="w-full p-4 bg-white dark:bg-gray-800 text-black dark:text-white rounded-xl shadow scrollbar-hide">
+        <InfiniteScroll
+          dataLength={ visiblePosts.length }
+          next={ fetchMoreData }
+          hasMore={ visiblePosts.length < allPosts.length }
+          loader={
+            isFetchingMore && (
+              <div className="w-full mx-auto p-4 mt-1">
+                <SkeletonPostCard />
+                <SkeletonPostCard />
+              </div>
+            )
+          }
+          endMessage={
+            <p className="text-center mt-4 text-gray-500 dark:text-gray-400">
+              Yay! You have seen it all 😊
+            </p>
+          }
+        >
+          { visiblePosts.map((post) => (
+            <PostCard key={ post.id } post={ post } />
+          )) }
+        </InfiniteScroll>
+      </div>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import { HelmetProvider } from 'react-helmet-async';  // ✅ Import HelmetProvider
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,7 +26,7 @@ function App() {
   if (!isAppReady) return <div>Loading...</div>;
 
   return (
-    <>
+    <HelmetProvider>
       <AppRoutes />
       <ToastContainer
         position="top-right"
@@ -39,7 +40,7 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-    </>
+    </HelmetProvider>
   );
 }
 
