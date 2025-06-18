@@ -2,35 +2,37 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess } from "../features/auth/authSlice";
 import type { AppDispatch } from "../app/store";
+import { useState } from "react";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Register = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleRegister = () => {
-    console.log("Register Button Clicked"); // Debugging line
-    const newUser = { id: "2", username: "new_manish" };
-    const newToken = "register123token";
+    setIsLoading(true);
+    setTimeout(() => {
+      const newUser = { id: "2", username: "new_manish" };
+      const newToken = "register123token";
 
-    // Save to localStorage
-    localStorage.setItem("user", JSON.stringify(newUser));
-    localStorage.setItem("token", newToken);
+      localStorage.setItem("user", JSON.stringify(newUser));
+      localStorage.setItem("token", newToken);
 
-    // Update Redux
-    dispatch(loginSuccess({ user: newUser, token: newToken }));
-
-    // Redirect
-    navigate("/");
+      dispatch(loginSuccess({ user: newUser, token: newToken }));
+      navigate("/");
+    }, 2000);
   };
 
   return (
-    <div className="text-center mt-10">
-      <h2 className="text-xl mb-4">Register Page (Mock)</h2>
+    <div className="text-center mt-10 p-4 sm:p-6">
+      <h2 className="text-xl sm:text-2xl mb-4">Register Page (Mock)</h2>
       <button
         onClick={ handleRegister }
-        className="bg-green-500 text-white px-4 py-2 rounded"
+        disabled={ isLoading }
+        className="bg-blue-500 hover:bg-blue-600 transition text-white px-4 py-2 rounded w-full sm:w-auto flex justify-center items-center"
       >
-        Register as New Manish
+        { isLoading ? <LoadingSpinner /> : "Register as New Manish" }
       </button>
     </div>
   );

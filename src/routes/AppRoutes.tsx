@@ -1,19 +1,16 @@
 import { Route, Routes } from "react-router-dom";
-// import Feed from "../pages/Feed"; make this a lazy loaded page
+import Layout from "../components/Layout";
+import Feed from "../pages/Feed";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import NotFound from "../pages/NotFound";
 import ProtectedRoute from "../components/ProtectedRoute";
-import { lazy, Suspense } from "react";
-import LoadingSpinner from "../components/LoadingSpinner";
-
-const Feed = lazy(() => import('../pages/Feed'))
 
 const AppRoutes = () => {
   return (
-    <Suspense fallback={ <LoadingSpinner /> }>
-      <Routes>
+    <Routes>
+      <Route element={ <Layout /> }>
         <Route
           path="/"
           element={
@@ -33,8 +30,8 @@ const AppRoutes = () => {
           }
         />
         <Route path="*" element={ <NotFound /> } />
-      </Routes>
-    </Suspense>
+      </Route>
+    </Routes>
   );
 };
 
