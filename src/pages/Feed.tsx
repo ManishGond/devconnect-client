@@ -1,34 +1,40 @@
 import { useSelector } from "react-redux";
-import type { RootState } from "../app/store";
-import PostCard from "../components/PostCard";
 import { useState, useEffect } from "react";
-import type { Post } from "../features/post/postSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
-import LoadingSpinner from "../components/LoadingSpinner";
+import type { RootState } from "../app/store";
+import type { Post } from "../features/post/postSlice";
 import SkeletonPostCard from "../components/SkeletonPostCard";
+import PostCard from "../components/PostCard";
+
+const FETCH_COUNT = 4; // Consistent fetch count
 
 const Feed = () => {
-  const allPosts = useSelector((state: RootState) => state.post.posts);
+  const allPosts: Post[] = useSelector((state: RootState) => state.post.posts);
+
   const [visiblePosts, setVisiblePosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
-  const fetchCount = 4;
+  const [isFetchingMore, setIsFetchingMore] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setVisiblePosts(allPosts.slice(0, fetchCount));
+      setVisiblePosts(allPosts.slice(0, FETCH_COUNT));
       setLoading(false);
-    }, 1000);
+    }, 1000); // Simulate initial loading delay
+
     return () => clearTimeout(timer);
   }, [allPosts]);
 
   const fetchMoreData = () => {
-    const nextPosts = allPosts.slice(
-      visiblePosts.length,
-      visiblePosts.length + fetchCount
-    );
-    setVisiblePosts((prev) => [...prev, ...nextPosts]);
+    setIsFetchingMore(true);
+    setTimeout(() => {
+      const nextPosts = allPosts.slice(
+        visiblePosts.length,
+        visiblePosts.length + FETCH_COUNT
+      );
+      setVisiblePosts((prev) => [...prev, ...nextPosts]);
+      setIsFetchingMore(false);
+    }, 1000); // Simulate API delay
   };
-
 
   if (loading) {
     return (
@@ -43,23 +49,24 @@ const Feed = () => {
   }
 
   return (
-    <div
-      id="scrollableDiv"
-      className="h-[80vh] overflow-y-auto mx-4 p-4 mt-6 bg-white dark:bg-gray-800 text-black dark:text-white rounded shadow scrollbar-hide overflow-x-auto"
-    >
-
-      <h2 className="text-xl mb-4 text-center">Feed</h2>
+    <div className="w-full mx-4 p-4 bg-white dark:bg-gray-800 text-black dark:text-white rounded-xl shadow scrollbar-hide">
       <InfiniteScroll
         dataLength={ visiblePosts.length }
         next={ fetchMoreData }
         hasMore={ visiblePosts.length < allPosts.length }
-        loader={ <LoadingSpinner /> }
+        loader={
+          isFetchingMore && (
+            <div className="w-full mx-auto p-4 mt-1">
+              <SkeletonPostCard />
+              <SkeletonPostCard />
+            </div>
+          )
+        }
         endMessage={
           <p className="text-center mt-4 text-gray-500 dark:text-gray-400">
             Yay! You have seen it all 😊
           </p>
         }
-        scrollableTarget="scrollableDiv" // super important!
       >
         { visiblePosts.map((post) => (
           <PostCard key={ post.id } post={ post } />
@@ -67,8 +74,6 @@ const Feed = () => {
       </InfiniteScroll>
     </div>
   );
-
 };
 
 export default Feed;
-

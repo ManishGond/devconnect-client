@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../components/Layout";
-import Feed from "../pages/Feed";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import NotFound from "../pages/NotFound";
 import ProtectedRoute from "../components/ProtectedRoute";
+import FeedPage from "../pages/FeedPage";
 
 const AppRoutes = () => {
   return (
@@ -15,7 +15,7 @@ const AppRoutes = () => {
           path="/"
           element={
             <ProtectedRoute>
-              <Feed />
+              <FeedPage />
             </ProtectedRoute>
           }
         />
