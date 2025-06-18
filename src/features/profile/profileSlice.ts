@@ -1,30 +1,26 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
-interface ProfileState{
-  name: string,
-  username: string,
-  bio: string,
-  github: string,
-  profilePic: string,
-}
-
-const initialState: ProfileState = {
+const initialState = {
   name: "Manish Gond",
   username: "manishgond",
-  bio: 'Full Stack Developer 🚀',
-  github: "https://github.com/manishgond",
-  profilePic: 'https://avatars.githubusercontent.com/u/91088463?v=4'
-}
+  bio: "",
+  github: "",
+  profilePic: "",
+  bannerPic: "",
+  location: "",
+  connections: 0,
+  openToWork: false, // ✅ New field added
+};
 
 const profileSlice = createSlice({
-  name: 'profile',
+  name: "profile",
   initialState,
-  reducers:{
-    updateProfile: (state, action:PayloadAction<Partial<ProfileState>>) => {
-      return {...state, ...action.payload};
-    }
-  }
-})
+  reducers: {
+    updateProfile(state, action) {
+      return { ...state, ...action.payload };
+    },
+  },
+});
 
-export const {updateProfile} = profileSlice.actions;
+export const { updateProfile } = profileSlice.actions;
 export default profileSlice.reducer;

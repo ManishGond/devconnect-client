@@ -1,5 +1,6 @@
 import { FiThumbsUp, FiMessageCircle, FiShare2 } from "react-icons/fi";
 import type { Post } from "../features/post/postSlice";
+import { motion } from "framer-motion";
 
 type SafePost = Partial<Post> & {
   id?: string | number;
@@ -17,9 +18,14 @@ const PostCard = ({ post }: { post: SafePost }) => {
   const content = post.content ?? post.body ?? "No content available";
 
   return (
-    <div className="border rounded-xl shadow-sm p-4 mb-6 bg-white dark:bg-gray-800 
-        hover:shadow-lg transition-shadow duration-300 max-w-full overflow-hidden">
-
+    <motion.div
+      className="border rounded-xl shadow-sm p-4 mb-6 bg-white dark:bg-gray-800
+        hover:shadow-lg transition-shadow duration-300 max-w-full overflow-hidden cursor-pointer"
+      initial={ { opacity: 0, scale: 0.88 } }
+      animate={ { opacity: 1, scale: 1 } }
+      transition={ { duration: 0.3 } }
+      whileHover={ { scale: 0.98 } }
+    >
       {/* User Info Section */ }
       <div className="flex items-center space-x-3 mb-3">
         <div className="w-12 h-12 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center text-sm font-bold text-gray-700 dark:text-gray-300">
@@ -60,7 +66,7 @@ const PostCard = ({ post }: { post: SafePost }) => {
           <span>Share</span>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

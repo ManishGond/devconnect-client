@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-100">
       <Navbar />
       <main className="flex-1 overflow-y-auto pt-16 pb-16">
         <Outlet />

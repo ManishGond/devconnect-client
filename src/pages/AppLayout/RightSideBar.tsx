@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const RightSideBar = () => {
   return (
     <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md space-y-4">
@@ -14,15 +16,12 @@ const RightSideBar = () => {
         <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
           Full-Stack Developer (MERN) • ML Enthusiast
         </p>
-        <a
-          href="https://www.linkedin.com/in/manishgond/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/my-profile"
           className="mt-2 text-sm bg-blue-600 hover:bg-blue-700 text-white py-1 px-3 rounded text-center inline-block"
         >
-          View LinkedIn Profile
-        </a>
-
+          DevConnect Profile
+        </Link>
       </div>
 
       {/* GitHub Stats */ }
