@@ -1,33 +1,29 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&vCenter=true&width=600&lines=Welcome+to+DevConnect!;A+Full+Stack+MERN+Social+Platform+for+Developers" alt="Typing SVG" />
+  <img src="https://media.licdn.com/dms/image/v2/D5616AQEzBfCoUOV1eg/profile-displaybackgroundimage-shrink_350_1400/B56ZeG.9AHHoAg-/0/1750316342683?e=1755734400&v=beta&t=F9YA4czxSrybONPvlQ-vKb_4Xu3x6Ldue4XSaWkg3N8" alt="DevConnect Banner" width="100%"/>
 </p>
 
 # 🚀 DevConnect
 
-A full-featured **MERN Stack Social Media Platform** built for developers to connect, share posts, track GitHub activity, and stay updated with the latest tech news — all in one place.
+A fully responsive **Frontend Social Media Platform UI** designed for developers to connect, share posts, explore tech news, and showcase their GitHub activity — all wrapped in a modern, smooth interface.
 
 ## 🖼️ Project Preview
-
 ![App Screenshot](https://github.com/user-attachments/assets/d67b3f51-2a6f-48ba-ba35-24a3b84a3f8a)
 
 ## ✨ Features
 
-- 🔐 **User Authentication** (JWT)
-- 📝 **Post Feed** (Create, Like, Comment, Share)
-- 🌐 **Tech News Integration**
-- 📊 **GitHub Stats Dashboard**
+- 📝 **Post Feed UI** (Create, Like, Comment visual components)
+- 🌐 **Tech News Sidebar UI**
+- 📊 **GitHub Stats Dashboard UI**
 - 🎨 **Dark/Light Mode Toggle**
 - 🧑‍💻 **Developer Profile Section** (LinkedIn + GitHub)
 - ⚡ **Responsive Design** (Desktop + Mobile)
-- 🌍 **Global Tech News Sidebar**
+- 🌍 **Global Tech News Display**
 
 ## 🛠️ Tech Stack
 
-**Client:** React.js, Redux Toolkit, TailwindCSS, Axios  
-**Server:** Node.js, Express.js, MongoDB, JWT Authentication  
-**Others:** GitHub API, News API, Framer Motion, React Router
+**Frontend:** React.js, Redux Toolkit, TailwindCSS, Axios, Framer Motion, React Router  
 
-## 🔗 Live Demo
+✅ **Note:** This is purely a **Frontend Project**. Backend services are mocked or planned for future development.
 
 🚧 **Not Deployed Yet**
 
