@@ -6,7 +6,7 @@ const initialState = {
   bio: "",
   github: "",
   profilePic: "https://avatars.githubusercontent.com/u/91088463?v=4",
-  bannerPic: "https://media.licdn.com/dms/image/v2/D5616AQEzBfCoUOV1eg/profile-displaybackgroundimage-shrink_350_1400/B56ZeG.9AHHoAg-/0/1750316342683?e=1755734400&v=beta&t=F9YA4czxSrybONPvlQ-vKb_4Xu3x6Ldue4XSaWkg3N8",
+  bannerPic: "https://raw.githubusercontent.com/ManishGond/devconnect-client/main/src/assets/banner.png",
   location: "",
   connections: 0,
   openToWork: false, // ✅ New field added
