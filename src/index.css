@@ -13,3 +13,9 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+html, body {
+  transition: background-color 0.5s ease;
+}
+
+

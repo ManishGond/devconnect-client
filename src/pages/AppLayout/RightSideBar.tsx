@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const RightSideBar = () => {
   return (
@@ -7,14 +8,14 @@ const RightSideBar = () => {
       <div className="flex flex-col items-center space-y-3">
         <img
           src="https://avatars.githubusercontent.com/u/91088463?v=4"
-          alt="Manish Gond"
+          alt="User"
           className="w-16 h-16 rounded-full"
         />
         <h2 className="font-semibold text-center text-gray-800 dark:text-white">
-          Manish Gond
+          User
         </h2>
         <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-          Full-Stack Developer (MERN) • ML Enthusiast
+          Full-Stack Developer (MERN) • AI/ML Enthusiast
         </p>
         <Link
           to="/my-profile"
@@ -66,6 +67,34 @@ const RightSideBar = () => {
         <button className="w-full text-left text-sm text-gray-600 dark:text-gray-300 hover:underline">
           Events
         </button>
+      </div>
+
+      {/* Contact / Social Links */ }
+      <div className="border-t pt-3 flex justify-center space-x-4">
+        <a
+          href="mailto:manish.n.gond@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 dark:text-gray-300 hover:text-blue-500 text-xl transition"
+        >
+          <FaEnvelope />
+        </a>
+        <a
+          href="https://github.com/manishgond/devconnect-client"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl transition"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://linkedin.com/in/manishgond"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 dark:text-gray-300 hover:text-blue-700 text-xl transition"
+        >
+          <FaLinkedin />
+        </a>
       </div>
     </div>
   );

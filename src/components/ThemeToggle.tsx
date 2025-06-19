@@ -3,18 +3,20 @@ import { useEffect, useState } from 'react'
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(() => {
     const storedTheme = localStorage.getItem('theme');
-    return storedTheme === 'dark'
+    return storedTheme === 'dark';
   });
+
   useEffect(() => {
     const root = window.document.documentElement;
     if (isDark) {
       root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
-      root.classList.remove('dark')
+      root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
-  }, [isDark])
+  }, [isDark]);
+
   return (
     <button
       onClick={ () => setIsDark(!isDark) }
@@ -25,4 +27,4 @@ const ThemeToggle = () => {
   );
 }
 
-export default ThemeToggle
+export default ThemeToggle;
