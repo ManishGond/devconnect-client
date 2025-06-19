@@ -10,7 +10,7 @@ export default function getCroppedImg(imageSrc: string, pixelCrop: any): Promise
       const ctx = canvas.getContext("2d");
 
       if (!ctx) {
-        reject(new Error("Canvas context is null")); // Proper error handling
+        reject(new Error("Canvas context is null"));
         return;
       }
 

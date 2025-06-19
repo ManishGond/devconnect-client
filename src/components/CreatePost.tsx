@@ -6,7 +6,6 @@ const CreatePost = () => {
 
   const handlePost = () => {
     if (postContent.trim()) {
-      // For now, just console.log. Later, connect this to Redux or API
       console.log("New Post:", postContent);
       setPostContent("");
     }

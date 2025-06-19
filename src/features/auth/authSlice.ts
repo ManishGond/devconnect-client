@@ -26,11 +26,19 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+
+      // Simulation of TokenRotation
+      const expiry = Date.now() + 15 * 60 * 1000; // 15 minutes
+      localStorage.setItem("tokenExpiry", expiry.toString());
     },
     logout: (state) => {
       state.user = null;
       state.token = null;
       state.isLoggedIn = false;
+
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      localStorage.removeItem("tokenExpiry");
     },
   },
 });

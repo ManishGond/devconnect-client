@@ -4,8 +4,8 @@ import type { AppDispatch, RootState } from "../app/store";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../features/auth/authSlice";
 import { toast } from "react-toastify";
-import logo from "../assets/logo.png"; // ✅ Import logo
-import banner from "../assets/navbar_banner.png"; // ✅ Import banner
+import logo from "../assets/logo.png";
+import banner from "../assets/navbar_banner.png";
 
 const Navbar = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -28,7 +28,7 @@ const Navbar = () => {
     <div
       className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 shadow text-white"
       style={ {
-        backgroundImage: `url(${banner})`, // ✅ Banner as background
+        backgroundImage: `url(${banner})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       } }

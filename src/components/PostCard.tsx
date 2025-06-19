@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 type SafePost = Partial<Post> & {
   id?: string | number;
   userId?: number;
-  userRole?: string; // New: Optional user role
+  userRole?: string;
   title?: string;
   body?: string;
   content?: string;
@@ -14,7 +14,7 @@ type SafePost = Partial<Post> & {
 
 const PostCard = ({ post }: { post: SafePost }) => {
   const user = post.user ?? `User ${post.userId ?? "?"}`;
-  const role = post.userRole ?? "Data Engineer"; // Mock role or pass it from the post data
+  const role = post.userRole ?? "Data Engineer";
   const content = post.content ?? post.body ?? "No content available";
 
   return (

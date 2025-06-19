@@ -8,7 +8,7 @@ import PostCard from "../components/PostCard";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 
-const FETCH_COUNT = 4; // Consistent fetch count
+const FETCH_COUNT = 4;
 
 const Feed = () => {
   const allPosts: Post[] = useSelector((state: RootState) => state.post.posts);
@@ -21,7 +21,7 @@ const Feed = () => {
     const timer = setTimeout(() => {
       setVisiblePosts(allPosts.slice(0, FETCH_COUNT));
       setLoading(false);
-    }, 1000); // Simulate initial loading delay
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [allPosts]);
@@ -35,7 +35,7 @@ const Feed = () => {
       );
       setVisiblePosts((prev) => [...prev, ...nextPosts]);
       setIsFetchingMore(false);
-    }, 1000); // Simulate API delay
+    }, 1000);
   };
 
   if (loading) {

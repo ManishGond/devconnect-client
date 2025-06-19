@@ -18,13 +18,12 @@ const Register = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(""); // Clear error when typing
+    setError("");
   };
 
   const handleRegister = () => {
     const { username, email, password } = formData;
 
-    // Simple validation check
     if (!username || !email || !password) {
       setError("All fields are required!");
       return;

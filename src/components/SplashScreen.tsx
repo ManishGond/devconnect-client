@@ -11,7 +11,7 @@ const SplashScreen = ({ onFinish }: SplashScreenProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onFinish();
-    }, 3000); // after 3 sec splash ends
+    }, 3000);
     return () => clearTimeout(timer);
   }, [onFinish]);
 
@@ -37,7 +37,7 @@ const SplashScreen = ({ onFinish }: SplashScreenProps) => {
           className="text-5xl font-extrabold text-white"
           style={ {
             WebkitTextStroke: '0.5px black',
-            ['textStroke' as any]: '0.5px black', // TS bypass
+            ['textStroke' as any]: '0.5px black',
           } }
           initial={ { x: -80, opacity: 0 } }
           animate={ { x: 0, opacity: 1 } }

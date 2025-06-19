@@ -9,7 +9,7 @@ const initialState = {
   bannerPic: "https://raw.githubusercontent.com/ManishGond/devconnect-client/main/src/assets/banner.png",
   location: "India",
   connections: 452,
-  openToWork: false, // ✅ New field added
+  openToWork: false,
 };
 
 const profileSlice = createSlice({
