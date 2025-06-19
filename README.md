@@ -11,7 +11,7 @@ A fully responsive **Frontend Social Media Platform UI** designed for developers
 ---
 ![Signup ScreenShot](https://github.com/user-attachments/assets/5344bb17-db49-4889-8955-9d742ad0e47a)
 ---
-![App Screenshot](https://github.com/user-attachments/assets/d67b3f51-2a6f-48ba-ba35-24a3b84a3f8a)
+![Feed ScreenShot](https://github.com/user-attachments/assets/5a8e7d48-7c06-4d55-9a68-195d6eadabc5)
 
 ## ✨ Features
 
