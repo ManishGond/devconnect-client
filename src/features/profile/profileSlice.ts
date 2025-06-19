@@ -4,11 +4,11 @@ const initialState = {
   name: "User 1",
   username: "@userone",
   bio: "",
-  github: "",
+  github: "https://github.com/ManishGond/",
   profilePic: "https://avatars.githubusercontent.com/u/91088463?v=4",
   bannerPic: "https://raw.githubusercontent.com/ManishGond/devconnect-client/main/src/assets/banner.png",
-  location: "",
-  connections: 0,
+  location: "India",
+  connections: 452,
   openToWork: false, // ✅ New field added
 };
 

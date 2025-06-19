@@ -70,7 +70,7 @@ const ProfilePage = () => {
       {/* Banner */ }
       <div className="relative">
         { formData.bannerPic ? (
-          <img src={ formData.bannerPic } alt="Banner" className="w-full h-48 object-cover" />
+          <img src={ formData.bannerPic } alt="Banner" className="w-full h-46 object-cover" />
         ) : (
           <div className="w-full h-48 bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300">No Banner</div>
         ) }
