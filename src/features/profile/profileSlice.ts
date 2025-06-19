@@ -5,7 +5,7 @@ const initialState = {
   username: "@userone",
   bio: "",
   github: "https://github.com/ManishGond/",
-  profilePic: "https://avatars.githubusercontent.com/u/91088463?v=4",
+  profilePic: "",
   bannerPic: "https://raw.githubusercontent.com/ManishGond/devconnect-client/main/src/assets/banner.png",
   location: "India",
   connections: 452,

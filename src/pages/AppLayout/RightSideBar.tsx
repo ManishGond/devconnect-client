@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const RightSideBar = () => {
+  // Placeholder user data
+  const userProfilePic = ""; // Empty string simulates "no profile pic"
+  const defaultProfilePic = "https://placehold.co/600x400"; // You can replace this with your default pic URL
+
   return (
     <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md space-y-4">
       {/* Profile Info */ }
       <div className="flex flex-col items-center space-y-3">
         <img
-          src="https://avatars.githubusercontent.com/u/91088463?v=4"
+          src={ userProfilePic ? userProfilePic : defaultProfilePic }
           alt="User"
-          className="w-16 h-16 rounded-full"
+          className="w-16 h-16 rounded-full object-cover"
         />
         <h2 className="font-semibold text-center text-gray-800 dark:text-white">
           User
@@ -34,7 +38,7 @@ const RightSideBar = () => {
           className="block"
         >
           <img
-            src="https://camo.githubusercontent.com/3269f365149d0a7020decc768e93c3a6c579aabe0b111012183c7d6ae3d09267/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d6d616e697368676f6e64266c61796f75743d636f6d70616374267468656d653d746f6b796f6e69676874"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=manishgond&layout=compact&theme=tokyonight"
             alt="GitHub Top Languages"
             className="w-full rounded-lg"
           />
@@ -46,7 +50,7 @@ const RightSideBar = () => {
           className="block"
         >
           <img
-            src="https://camo.githubusercontent.com/cc5994b82baf0f108a554cd9e1e670a3480fc6e17f903315f2bcb6aaf629fb04/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d6d616e697368676f6e642673686f775f69636f6e733d74727565267468656d653d746f6b796f6e69676874"
+            src="https://github-readme-stats.vercel.app/api?username=manishgond&show_icons=true&theme=tokyonight"
             alt="GitHub Stats Card"
             className="w-full rounded-lg"
           />
@@ -55,18 +59,14 @@ const RightSideBar = () => {
 
       {/* Additional Options */ }
       <div className="border-t pt-3 space-y-2">
-        <button className="w-full text-left text-sm text-gray-600 dark:text-gray-300 hover:underline">
-          Saved Items
-        </button>
-        <button className="w-full text-left text-sm text-gray-600 dark:text-gray-300 hover:underline">
-          Groups
-        </button>
-        <button className="w-full text-left text-sm text-gray-600 dark:text-gray-300 hover:underline">
-          Newsletters
-        </button>
-        <button className="w-full text-left text-sm text-gray-600 dark:text-gray-300 hover:underline">
-          Events
-        </button>
+        { ["Saved Items", "Groups", "Newsletters", "Events"].map((item) => (
+          <button
+            key={ item }
+            className="w-full text-left text-sm text-gray-600 dark:text-gray-300 hover:underline"
+          >
+            { item }
+          </button>
+        )) }
       </div>
 
       {/* Contact / Social Links */ }
