@@ -11,7 +11,7 @@ const LeftSideBar = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?category=technology&pageSize=10&apiKey=${NEWS_API}`
+          `https://gnews.io/api/v4/top-headlines?category=technology&token=${NEWS_API}`
         );
         setNews(response.data.articles);
       } catch (error) {
