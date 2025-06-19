@@ -7,6 +7,12 @@
 A fully responsive **Frontend Social Media Platform UI** designed for developers to connect, share posts, explore tech news, and showcase their GitHub activity — all wrapped in a modern, smooth interface.
 
 ## 🖼️ Project Preview
+![SplashScreen](https://github.com/user-attachments/assets/eeaac9ac-d1b6-462a-a6d7-6b8cce5b8253)
+---
+![Login ScreenShot](https://github.com/user-attachments/assets/246790c0-35f6-4865-9fe6-e2ec03a1a3af)
+---
+![Signup ScreenShot](https://github.com/user-attachments/assets/5344bb17-db49-4889-8955-9d742ad0e47a)
+---
 ![App Screenshot](https://github.com/user-attachments/assets/d67b3f51-2a6f-48ba-ba35-24a3b84a3f8a)
 
 ## ✨ Features
